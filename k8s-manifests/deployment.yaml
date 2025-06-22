@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: register-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: register-app
+  template:
+    metadata:
+      labels:
+        app: register-app
+    spec:
+      containers:
+        - name: register-container
+          image: nginx   # Replace with your app's Docker image
+          ports:
+            - containerPort: 80
